@@ -87,6 +87,19 @@ section{padding:64px 0}
 .w h3{font-size:16.5px;font-weight:640;margin-bottom:6px}
 .w p{color:var(--ink2);font-size:13.5px}
 
+/* BILGRUPPER — modeller per grupp */
+.gdgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(max-width:680px){.gdgrid{grid-template-columns:1fr}}
+.gdcard{background:var(--surface);border:1px solid var(--line2);border-radius:16px;padding:20px}
+.gd-head{display:flex;align-items:center;gap:14px;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.gd-let{width:38px;height:38px;flex:none;border-radius:10px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:800;font-size:17px}
+.gd-typ{font-size:16.5px;font-weight:640}
+.gd-sub{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.gd-row{display:grid;grid-template-columns:104px 1fr;gap:12px;padding:7px 0;font-size:14px}
+.gd-k{color:var(--accentd);font-weight:700}
+.gd-v{color:var(--ink2)}
+@media(max-width:420px){.gd-row{grid-template-columns:1fr;gap:2px}}
+
 /* STEPS */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;position:relative}
 .steps::before{content:"";position:absolute;top:19px;left:8%;right:8%;height:2px;background:linear-gradient(90deg,var(--line2),var(--accent),var(--line2))}
