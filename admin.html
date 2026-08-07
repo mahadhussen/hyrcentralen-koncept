@@ -1,0 +1,23 @@
+<!doctype html><html lang="sv"><head><meta charset="utf-8">
+<title>Hyrcentralen — Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<link rel="stylesheet" href="assets/styles.css">
+</head><body class="adminbody">
+<div id="adminRoot">
+  <div class="pinbox" id="pinbox">
+    <form class="pincard" id="pinForm" onsubmit="return false">
+      <img class="logo" src="assets/logo.png" alt="Hyrcentralen">
+      <h2>Personal</h2>
+      <p>Ange kod för att öppna adminvyn.</p>
+      <input type="password" id="pin" inputmode="numeric" placeholder="••••" maxlength="4" autocomplete="off">
+      <button class="btn btn-primary" id="pinBtn" style="width:100%;justify-content:center">Logga in</button>
+      <p class="pinerr" id="pinerr" hidden>Fel kod, försök igen.</p>
+      <p class="demo-note">Demokod: 1234</p>
+    </form>
+  </div>
+</div>
+<script src="assets/data.js"></script>
+<script src="assets/store.js"></script>
+<script src="assets/admin.js"></script>
+</body></html>

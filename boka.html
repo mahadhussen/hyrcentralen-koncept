@@ -1,0 +1,46 @@
+<!doctype html><html lang="sv"><head><meta charset="utf-8">
+<title>Hyrcentralen — Boka bil</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<link rel="stylesheet" href="assets/styles.css">
+</head><body>
+<header><div class="wrap"><nav>
+  <a href="index.html" class="brand"><img class="logo" src="assets/logo.png" alt="Hyrcentralen"></a>
+  <div class="navlinks"><a href="bilar.html" class="">Bilar</a><a href="priser.html" class="">Priser</a><a href="avtalskund.html" class="">Avtalskund</a><a href="forsakringshyra.html" class="">Försäkringshyra</a><a href="kontakt.html" class="">Kontakt</a></div>
+  <a class="btn btn-primary nav-cta" href="boka.html">Boka bil <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</nav></div></header>
+<section class="phead"><div class="wrap"><span class="eyebrow">Boka bil</span><h1>Boka din bil</h1><p>Välj klass, datum och sträcka. Priset räknas ut automatiskt medan du fyller i, inget manuellt räknande.</p></div></section>
+<section class="wrap" style="padding-top:16px"><div class="bookgrid">
+  <form class="bookform" id="bokaForm" onsubmit="return false" autocomplete="off">
+    <div class="fieldrow2">
+      <div class="field"><label>Bilklass</label><select id="bGroup"></select></div>
+      <div class="field"><label>Körsträcka</label><label class="switch"><input type="checkbox" id="bFri"> Fria km (obegränsat)</label></div>
+    </div>
+    <div class="fieldrow2">
+      <div class="field"><label>Hämta</label><input type="date" id="bFrom"></div>
+      <div class="field"><label>Lämna</label><input type="date" id="bTo"></div>
+    </div>
+    <div class="fieldrow2">
+      <div class="field" id="kmField"><label>Ungefärlig körsträcka (km)</label><input type="number" id="bKm" min="0" step="10" value="300"></div>
+      <div class="field"><label>Trygghet</label><label class="switch"><input type="checkbox" id="bSelf"> Självriskreducering</label></div>
+    </div>
+    <hr class="soft">
+    <div class="fieldrow2">
+      <div class="field"><label>Namn</label><input type="text" id="bNamn" placeholder="För- och efternamn"></div>
+      <div class="field"><label>Telefon</label><input type="tel" id="bTel" placeholder="07x xxx xx xx"></div>
+    </div>
+    <div class="field"><label>E-post</label><input type="email" id="bEpost" placeholder="du@exempel.se"></div>
+    <button class="btn btn-primary" id="bSubmit" style="width:100%;justify-content:center;margin-top:10px">Skicka bokning <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    <p class="demo-note">Prototyp: bokningen sparas i den här webbläsaren och dyker upp i adminvyn.</p>
+  </form>
+  <aside class="booksummary" id="bSummary"></aside>
+</div></section>
+<div class="overlay" id="bOverlay"><div class="modal" id="bModal"></div></div>
+<footer><div class="wrap">
+  <img class="flogo" src="assets/logo.png" alt="Hyrcentralen">
+  <div class="fnav"><a href="bilar.html">Bilar</a><a href="priser.html">Priser</a><a href="avtalskund.html">Avtalskund</a><a href="forsakringshyra.html">Försäkringshyra</a><a href="kontakt.html">Kontakt</a></div>
+  <div class="copyr">© 2026 Hyrcentralen Väst · Alla priser inkl. moms · Integritetspolicy · Cookies</div>
+  <div class="concept">Konceptförslag — inte Hyrcentralens officiella sida.</div>
+</div></footer>
+<script src="assets/data.js"></script><script src="assets/store.js"></script><script src="assets/boka.js"></script>
+</body></html>
