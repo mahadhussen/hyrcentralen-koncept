@@ -8,7 +8,12 @@
 
   function kr(n) { return Math.round(n).toLocaleString('sv-SE'); }
   function dec(x) { return Number(x).toFixed(2).replace('.', ','); }
-  function iso(d) { return d.toISOString().slice(0, 10); }
+  /* Lokalt datum, aldrig toISOString: den räknar i UTC och tappar ett dygn
+     för svensk tid (sommartid UTC+2). Ett tappat dygn är fel pris. */
+  function iso(d) {
+    var m = d.getMonth() + 1, day = d.getDate();
+    return d.getFullYear() + '-' + (m < 10 ? '0' : '') + m + '-' + (day < 10 ? '0' : '') + day;
+  }
   function parse(s) { var p = String(s || '').split('-'); return new Date(+p[0], +p[1] - 1, +p[2]); }
   function addDays(s, n) { var d = parse(s); d.setDate(d.getDate() + n); return iso(d); }
 
