@@ -13,13 +13,29 @@
     sel.appendChild(o);
   });
 
-  /* förvald: idag + 3 dygn, och läs ?grupp= från prislistan */
+  /* Röd tråd: ta emot val från prislistan och kalkylen */
   var today = H.iso(new Date());
+  var p = new URLSearchParams(location.search);
+  var grupp = p.get('grupp');
+  var dagar = parseInt(p.get('dagar'), 10);
+  var km = parseInt(p.get('km'), 10);
+
   $('bFrom').value = today;
-  $('bTo').value = H.addDays(today, 3);
   $('bFrom').min = today;
-  var q = new URLSearchParams(location.search).get('grupp');
-  if (q && D[q]) sel.value = q;
+  $('bTo').value = H.addDays(today, dagar > 0 ? dagar : 3);
+  if (grupp && D[grupp]) sel.value = grupp;
+  if (km >= 0 && !isNaN(km)) $('bKm').value = km;
+  if (p.get('fri') === '1') $('bFri').checked = true;
+  if (p.get('self') === '1') $('bSelf').checked = true;
+
+  /* visa att uträkningen följde med */
+  if (grupp || dagar || km) {
+    var note = document.createElement('div');
+    note.className = 'carryover';
+    note.textContent = 'Vi tog med din uträkning från prislistan. Ändra fritt, priset räknas om direkt.';
+    var form = document.getElementById('bokaForm');
+    form.insertBefore(note, form.firstChild);
+  }
 
   function current() {
     return {

@@ -7,10 +7,12 @@
 <header><div class="wrap"><nav>
   <a href="index.html" class="brand"><img class="logo" src="assets/logo.png" alt="Hyrcentralen"></a>
   <div class="navlinks"><a href="bilar.html" class="">Bilar</a><a href="priser.html" class="">Priser</a><a href="avtalskund.html" class="">Avtalskund</a><a href="forsakringshyra.html" class="">Försäkringshyra</a><a href="kontakt.html" class="">Kontakt</a></div>
-  <a class="btn btn-primary nav-cta" href="boka.html">Boka bil <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  <a class="btn btn-primary nav-cta" href="#bokning">Boka bil <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
 </nav></div></header>
-<section class="phead"><div class="wrap"><span class="eyebrow">Boka bil</span><h1>Boka din bil</h1><p>Välj klass, datum och sträcka. Priset räknas ut automatiskt medan du fyller i, inget manuellt räknande.</p></div></section>
-<section class="wrap" style="padding-top:16px"><div class="bookgrid">
+<section class="phead"><div class="wrap"><span class="eyebrow">Boka bil</span><h1>Boka din bil</h1><p>Välj klass, datum och sträcka. Priset räknas ut automatiskt medan du fyller i, inget manuellt räknande.</p>
+  <ol class="steps3"><li class="done"><span>1</span>Välj bil</li><li class="now"><span>2</span>Dina uppgifter</li><li><span>3</span>Bekräftelse</li></ol>
+</div></section>
+<section class="wrap" style="padding-top:16px" id="bokning"><div class="bookgrid">
   <form class="bookform" id="bokaForm" onsubmit="return false" autocomplete="off">
     <div class="fieldrow2">
       <div class="field"><label>Bilklass</label><select id="bGroup"></select></div>
